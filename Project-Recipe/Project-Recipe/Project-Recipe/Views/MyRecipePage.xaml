@@ -1,0 +1,44 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Project_Recipe.Views.MyRecipePage" Title="MyRecipe" BackgroundColor="#9999ff">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Add"
+                     Clicked="ToolbarItem_Clicked" />
+    </ContentPage.ToolbarItems>
+
+
+    <!-- Display notes in a list -->
+    <StackLayout Margin="20,35,20,20">
+        <!--  <Entry x:Name="title"
+               Placeholder="Enter title" />
+        <Entry x:Name="createdby"
+               Placeholder="Enter person" />
+        <Entry x:Name="ingredients"
+               Placeholder="Enter ingredients" />
+        <Entry x:Name="steps"
+               Placeholder="Enter steps" />
+        <Button Text="Add to Database"
+                Clicked="OnButtonClicked" />
+        <Button Text="Update Database"
+                Clicked="Button_Clicked" />
+        <Button Text="Delete Database"
+                Clicked="Button_Clicked_1" /> -->
+        <ScrollView>
+            <CollectionView x:Name="CollectView" SelectionMode="Single" SelectionChanged="OnSelectionChanged">
+                <CollectionView.ItemTemplate>
+                    <DataTemplate>
+                        <StackLayout>
+                            <Label Text="{Binding Title}"
+                               FontSize="Large" />
+                            <Label Text="{Binding CreatedBy}"
+                               TextColor="Silver"
+                               FontSize="Medium" />
+                        </StackLayout>
+                    </DataTemplate>
+                </CollectionView.ItemTemplate>
+            </CollectionView>
+        </ScrollView>
+    </StackLayout>
+    
+</ContentPage>
